@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E629DFB5-4AD9-4575-A5EB-FA666B72E579}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{FDBF867A-DADF-4D6B-ABFF-E2F93D01955C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Rpc</RootNamespace>
-    <AssemblyName>Rpc</AssemblyName>
+    <RootNamespace>Rpc.Test.Server</RootNamespace>
+    <AssemblyName>Rpc.Test.Server</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,10 +37,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\ActionAttribute.cs" />
-    <Compile Include="Attributes\ServiceAttribute.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rpc.Test.Model\Rpc.Test.Model.csproj">
+      <Project>{d54bad67-149d-4c95-b18d-b5801b9e4f12}</Project>
+      <Name>Rpc.Test.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rpc\Rpc.csproj">
+      <Project>{e629dfb5-4ad9-4575-a5eb-fa666b72e579}</Project>
+      <Name>Rpc</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
