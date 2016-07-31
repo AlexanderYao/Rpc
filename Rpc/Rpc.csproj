@@ -37,7 +37,7 @@
   <ItemGroup>
     <Compile Include="Attributes\ActionAttribute.cs" />
     <Compile Include="Attributes\ServiceAttribute.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="ServiceHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

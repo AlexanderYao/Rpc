@@ -10,6 +10,9 @@ namespace Rpc.Test.Server
     {
         static void Main(string[] args)
         {
+            var host = new ServiceHost();
+            host.Register(typeof(ITestService));
+            host.Open();
         }
     }
 }
